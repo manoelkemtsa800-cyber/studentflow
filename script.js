@@ -20,7 +20,7 @@ const DEFAULT_STUDENTS = [
     projects: "#",
     github: "https://github.com",
     linkedin: "",
-    avatar: "assets/images/avatars/kemtsa.jpg",
+    avatar: "assets/images/avatars/kemtsa.JPG",
     initials: "KP"
   },
   {
@@ -35,7 +35,7 @@ const DEFAULT_STUDENTS = [
     projects: "#",
     github: "https://github.com",
     linkedin: "",
-    avatar: "assets/images/avatars/foe.jpg",
+    avatar: "assets/images/avatars/foe.jpeg",
     initials: "FO"
   },
   {
@@ -95,7 +95,7 @@ const DEFAULT_STUDENTS = [
     projects: "#",
     github: "",
     linkedin: "",
-    avatar: "assets/images/avatars/monkama.jpg",
+    avatar: "assets/images/avatars/monkama.jpeg",
     initials: "MD"
   },
   {
