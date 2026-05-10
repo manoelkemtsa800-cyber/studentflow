@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="day">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover"/>
+  <meta name="theme-color" content="#080808" id="metaThemeColor"/>
+  <meta name="mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="apple-mobile-web-app-title" content="SFE"/>
+  <meta name="description" content="StudentFlow Elite — La plateforme premium des talents étudiants"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <title>StudentFlow Elite — Talents d'Exception</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Syncopate:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-ring"></div>
+    <div class="loader-ring loader-ring-2"></div>
+    <div class="loader-logo">SFE</div>
+    <div class="loader-text">CHARGEMENT EN COURS</div>
+  </div>
+</div>
+
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+<canvas id="particles-canvas"></canvas>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <img src="assets/images/logo.png" alt="SFE" class="nav-logo-img"
+           onerror="this.style.display='none';document.getElementById('navLogoText').style.display='flex'"/>
+      <span class="nav-logo-text" id="navLogoText">
+        <span class="logo-sf">SF</span><span class="logo-elite">ELITE</span>
+      </span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero" class="nav-link">Accueil</a></li>
+      <li><a href="#students" class="nav-link">Etudiants</a></li>
+      <li><a href="#skills" class="nav-link">Competences</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Changer theme">
+        <span class="theme-icon">&#9788;</span>
+      </button>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-content">
+    <div class="hero-badge reveal">PLATEFORME PREMIUM &bull; 2025</div>
+    <h1 class="hero-title reveal">
+      <span class="title-line">Des etudiants</span>
+      <span class="title-line gold">prets a resoudre</span>
+      <span class="title-line">tous vos problemes.</span>
+    </h1>
+    <p class="hero-sub reveal">Decouvrez une generation d'elites numeriques &mdash; createurs, developpeurs, designers et innovateurs.</p>
+    <div class="hero-cta reveal">
+      <a href="#students" class="btn-gold">
+        <span>Decouvrir les talents</span>
+        <div class="btn-shine"></div>
+      </a>
+    </div>
+    <!-- PHOTOS PREVIEW HERO -->
+    <div class="hero-avatars reveal">
+      <div class="avatars-row" id="heroAvatars"></div>
+      <div class="avatars-label">
+        <span id="heroCount" class="avatars-count">7</span>
+        <span>&nbsp;etudiants d'elite</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-indicator"><div class="scroll-dot"></div></div>
+    <span>DEFILER</span>
+  </div>
+</section>
+
+<!-- STUDENTS -->
+<section id="students">
+  <div class="section-container">
+    <div class="section-header reveal">
+      <div class="section-tag">NOS TALENTS</div>
+      <h2 class="section-title">Etudiants <span class="gold">d'Excellence</span></h2>
+      <p class="section-sub">Des profils uniques, des competences d'exception</p>
+    </div>
+    <div class="filter-bar reveal">
+      <button class="filter-btn active" data-filter="all">Tous</button>
+      <button class="filter-btn" data-filter="dev">Developpement</button>
+      <button class="filter-btn" data-filter="design">Design</button>
+      <button class="filter-btn" data-filter="data">Data</button>
+      <button class="filter-btn" data-filter="mobile">Mobile</button>
+    </div>
+    <div class="students-grid" id="studentsGrid"></div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-container">
+    <div class="section-header reveal">
+      <div class="section-tag">SAVOIR-FAIRE</div>
+      <h2 class="section-title">Competences les plus <span class="gold">Partagees</span></h2>
+    </div>
+    <div class="skills-layout">
+      <div class="skills-bars reveal">
+        <div class="skill-bar-item"><div class="skill-info"><span>HTML / CSS</span><span class="skill-pct">95%</span></div><div class="skill-track"><div class="skill-fill" data-pct="95"></div></div></div>
+        <div class="skill-bar-item"><div class="skill-info"><span>JavaScript</span><span class="skill-pct">88%</span></div><div class="skill-track"><div class="skill-fill" data-pct="88"></div></div></div>
+        <div class="skill-bar-item"><div class="skill-info"><span>Python</span><span class="skill-pct">82%</span></div><div class="skill-track"><div class="skill-fill" data-pct="82"></div></div></div>
+        <div class="skill-bar-item"><div class="skill-info"><span>Flutter</span><span class="skill-pct">75%</span></div><div class="skill-track"><div class="skill-fill" data-pct="75"></div></div></div>
+        <div class="skill-bar-item"><div class="skill-info"><span>UI / UX Design</span><span class="skill-pct">79%</span></div><div class="skill-track"><div class="skill-fill" data-pct="79"></div></div></div>
+        <div class="skill-bar-item"><div class="skill-info"><span>Bases de donnees</span><span class="skill-pct">85%</span></div><div class="skill-track"><div class="skill-fill" data-pct="85"></div></div></div>
+        <div class="skill-bar-item"><div class="skill-info"><span>React / Vue</span><span class="skill-pct">70%</span></div><div class="skill-track"><div class="skill-fill" data-pct="70"></div></div></div>
+        <div class="skill-bar-item"><div class="skill-info"><span>Node.js / PHP</span><span class="skill-pct">68%</span></div><div class="skill-track"><div class="skill-fill" data-pct="68"></div></div></div>
+      </div>
+      <div class="skills-radar reveal">
+        <canvas id="radarChart" width="350" height="350"></canvas>
+      </div>
+    </div>
+    <div class="skills-cloud reveal" id="skillsCloud"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-container">
+    <div class="contact-card reveal">
+      <div class="contact-text">
+        <div class="section-tag">COLLABORATION</div>
+        <h2 class="section-title">Pret a <span class="gold">collaborer ?</span></h2>
+        <p>Nos etudiants sont disponibles pour des stages, freelances, projets et collaborations professionnelles.</p>
+        <a href="mailto:contact@studentflow.elite" class="btn-gold">
+          <span>Nous contacter</span>
+          <div class="btn-shine"></div>
+        </a>
+      </div>
+      <div class="contact-deco">
+        <div class="deco-ring r1"></div>
+        <div class="deco-ring r2"></div>
+        <div class="deco-ring r3"></div>
+        <div class="deco-text">SFE</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-logo">StudentFlow <span class="gold">Elite</span></div>
+    <p class="footer-sub">La plateforme premium des talents etudiants</p>
+    <p class="footer-copy">&copy; 2025 StudentFlow Elite &mdash; Tous droits reserves</p>
+    <div class="footer-secret" id="footerSecret" title="Admin"></div>
+  </div>
+</footer>
+
+<!-- MODAL CV -->
+<div id="cvModal" class="modal">
+  <div class="modal-overlay" id="modalOverlay"></div>
+  <div class="modal-box" id="modalBox">
+    <button class="modal-close" id="modalClose">&#10005;</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<!-- MODAL EDIT -->
+<div id="editModal" class="modal">
+  <div class="modal-overlay" id="editModalOverlay"></div>
+  <div class="modal-box" style="max-width:600px;">
+    <button class="modal-close" id="editModalClose">&#10005;</button>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;margin-bottom:24px;color:var(--gold);">
+      &#9998; Modifier l'etudiant
+    </h2>
+    <input type="hidden" id="e-id"/>
+    <div class="admin-form-grid">
+      <input type="text" id="e-name" placeholder="Nom complet" class="admin-input"/>
+      <input type="text" id="e-field" placeholder="Filiere" class="admin-input"/>
+      <select id="e-level" class="admin-input">
+        <option value="">Niveau</option>
+        <option>Licence 1</option><option>Licence 2</option><option>Licence 3</option>
+        <option>Master 1</option><option>Master 2</option><option>Doctorat</option>
+      </select>
+      <select id="e-category" class="admin-input">
+        <option value="dev">Developpement</option>
+        <option value="design">Design</option>
+        <option value="data">Data</option>
+        <option value="mobile">Mobile</option>
+      </select>
+      <input type="text" id="e-skills" placeholder="Competences (virgule separees)" class="admin-input"/>
+      <input type="text" id="e-github" placeholder="Lien GitHub" class="admin-input"/>
+      <input type="text" id="e-linkedin" placeholder="Lien LinkedIn" class="admin-input"/>
+      <input type="text" id="e-cv" placeholder="Lien CV" class="admin-input"/>
+      <input type="text" id="e-projects" placeholder="Lien Projets" class="admin-input"/>
+      <input type="text" id="e-avatar" placeholder="URL Photo de profil" class="admin-input"/>
+    </div>
+    <textarea id="e-bio" placeholder="Biographie" class="admin-textarea"></textarea>
+    <button class="btn-gold" onclick="saveEditStudent()" style="width:100%;justify-content:center;margin-top:4px;">
+      <span>&#128190; Sauvegarder les modifications</span>
+      <div class="btn-shine"></div>
+    </button>
+  </div>
+</div>
+
+<!-- ADMIN DASHBOARD -->
+<div id="adminPanel" class="admin-panel">
+  <div class="admin-overlay" id="adminOverlay"></div>
+  <div class="admin-box">
+    <div class="admin-header">
+      <div class="admin-logo">&#9889; ADMIN <span class="gold">DASHBOARD</span></div>
+      <button class="admin-close" id="adminClose">&#10005;</button>
+    </div>
+    <div id="adminLogin" class="admin-section">
+      <h3>Acces Securise</h3>
+      <input type="password" id="adminPass" placeholder="Mot de passe admin" class="admin-input"/>
+      <button class="btn-gold" onclick="checkAdminPass()"><span>Connexion</span><div class="btn-shine"></div></button>
+      <p class="admin-hint">Mot de passe : <em>elite2025</em></p>
+    </div>
+    <div id="adminDashboard" class="admin-section hidden">
+      <div class="admin-tabs">
+        <button class="admin-tab active" data-tab="addStudent">&#10133; Ajouter</button>
+        <button class="admin-tab" data-tab="manageStudents">&#9998; Modifier / Supprimer</button>
+      </div>
+      <!-- ADD -->
+      <div id="tab-addStudent" class="admin-tab-content active">
+        <h3 class="admin-section-title">Ajouter un Etudiant</h3>
+        <div class="admin-form-grid">
+          <input type="text" id="s-name" placeholder="Nom complet *" class="admin-input"/>
+          <input type="text" id="s-field" placeholder="Filiere (ex: Informatique)" class="admin-input"/>
+          <select id="s-level" class="admin-input">
+            <option value="">Niveau</option>
+            <option>Licence 1</option><option>Licence 2</option><option>Licence 3</option>
+            <option>Master 1</option><option>Master 2</option><option>Doctorat</option>
+          </select>
+          <select id="s-category" class="admin-input">
+            <option value="">Categorie *</option>
+            <option value="dev">Developpement</option>
+            <option value="design">Design</option>
+            <option value="data">Data</option>
+            <option value="mobile">Mobile</option>
+          </select>
+          <input type="text" id="s-skills" placeholder="Competences (virgule separees)" class="admin-input"/>
+          <input type="text" id="s-github" placeholder="Lien GitHub" class="admin-input"/>
+          <input type="text" id="s-linkedin" placeholder="Lien LinkedIn" class="admin-input"/>
+          <input type="text" id="s-cv" placeholder="Lien CV *" class="admin-input"/>
+          <input type="text" id="s-projects" placeholder="Lien Projets" class="admin-input"/>
+          <input type="text" id="s-avatar" placeholder="URL Photo de profil (GitHub, Imgur...)" class="admin-input"/>
+        </div>
+        <textarea id="s-bio" placeholder="Biographie / Description courte" class="admin-textarea"></textarea>
+        <button class="btn-gold" onclick="addStudent()"><span>Ajouter l'etudiant</span><div class="btn-shine"></div></button>
+      </div>
+      <!-- MANAGE -->
+      <div id="tab-manageStudents" class="admin-tab-content hidden">
+        <h3 class="admin-section-title">Modifier / Supprimer les Etudiants</h3>
+        <div id="adminStudentList"></div>
+      </div>
+      <div class="admin-footer">
+        <button class="btn-outline" onclick="exportData()">&#128190; Exporter JSON</button>
+        <button class="btn-outline danger" onclick="resetData()">&#128465; Reset tout</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
